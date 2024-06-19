@@ -1,0 +1,82 @@
+﻿@model AdoptMe.Models.Animais
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Animais</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeAnimal" class="control-label"></label>
+                <input asp-for="NomeAnimal" class="form-control" />
+                <span asp-validation-for="NomeAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RacaAnimal" class="control-label"></label>
+                <input asp-for="RacaAnimal" class="form-control" />
+                <span asp-validation-for="RacaAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoAnimal" class="control-label"></label>
+                <input asp-for="TipoAnimal" class="form-control" />
+                <span asp-validation-for="TipoAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorAnimal" class="control-label"></label>
+                <input asp-for="CorAnimal" class="form-control" />
+                <span asp-validation-for="CorAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SexoAnimal" class="control-label"></label>
+                <input asp-for="SexoAnimal" class="form-control" />
+                <span asp-validation-for="SexoAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoAnimal" class="control-label"></label>
+                <input asp-for="ObservacaoAnimal" class="form-control" />
+                <span asp-validation-for="ObservacaoAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoAnimal" class="control-label"></label>
+                <input asp-for="FotoAnimal" class="form-control" />
+                <span asp-validation-for="FotoAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtDesaparecimentoAnimal" class="control-label"></label>
+                <input asp-for="DtDesaparecimentoAnimal" class="form-control" />
+                <span asp-validation-for="DtDesaparecimentoAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtEncontroAnimal" class="control-label"></label>
+                <input asp-for="DtEncontroAnimal" class="form-control" />
+                <span asp-validation-for="DtEncontroAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusAnimal" class="control-label"></label>
+                <input asp-for="StatusAnimal" class="form-control" />
+                <span asp-validation-for="StatusAnimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

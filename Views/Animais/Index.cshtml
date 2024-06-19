@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AdoptMe.Models.Animais>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RacaAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SexoAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObservacaoAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FotoAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtDesaparecimentoAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtEncontroAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RacaAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SexoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObservacaoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtDesaparecimentoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtEncontroAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
